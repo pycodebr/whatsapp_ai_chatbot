@@ -1,0 +1,5 @@
+.env
+venv
+.media
+.sessions
+__pycache__/

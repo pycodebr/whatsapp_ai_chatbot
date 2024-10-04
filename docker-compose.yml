@@ -1,0 +1,17 @@
+services:
+
+  waha:
+    image: devlikeapro/waha:latest
+    container_name: wpp_bot_waha
+    restart: always
+
+    ports:
+      - '3000:3000'
+
+  api:
+    build: .
+    container_name: wpp_bot_api
+    ports:
+      - '5000:5000'
+    volumes:
+      - .:/app
