@@ -9,9 +9,12 @@ services:
       - '3000:3000'
 
   api:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile.api
     container_name: wpp_bot_api
     ports:
       - '5000:5000'
     volumes:
       - .:/app
+      - ./chroma_data:/app/chroma_data
