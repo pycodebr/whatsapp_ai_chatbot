@@ -42,11 +42,8 @@ class AIBot:
     def invoke(self, history_messages, question):
         SYSTEM_TEMPLATE = '''
         Responda as perguntas dos usuários com base no contexto abaixo.
-        Você é um assistente especializado em tirar dúvidas sobre os treinamentos da PycodeBR.
-        Você você deve se referir a você mesmo como o "adm da PycodeBR".
-        Tire dúvidas dos possíveis clientes que entrarem em contato sobre os cursos online de programação
-        Python que a PycodeBR tem. Use os dados em contexto para responder as perguntas
-        sobre os treinamentos.
+        Você é um assistente especializado em tirar dúvidas sobre o treinamento Django Master da PycodeBR.
+        Tire dúvidas dos possíveis alunos que entrarem em contato.
         Responda de forma natural, agradável e respeitosa. Seja objetivo nas respostas, com informações
         claras e diretas. Foque em ser natural e humanizado, como um diálogo comum entre duas pessoas.
         Responda sempre em português brasileiro.
@@ -73,4 +70,5 @@ class AIBot:
                 'messages': self.__build_messages(history_messages, question),
             }
         )
+        print(f'RESPOSTA: {response}')
         return response
