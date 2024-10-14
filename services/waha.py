@@ -32,3 +32,33 @@ class Waha:
             headers=headers,
         )
         return response.json()
+
+    def start_typing(self, chat_id):
+        url = f'{self.__api_url}/api/startTyping'
+        headers = {
+            'Content-Type': 'application/json',
+        }
+        payload = {
+            'session': 'default',
+            'chatId': chat_id,
+        }
+        requests.post(
+            url=url,
+            json=payload,
+            headers=headers,
+        )
+
+    def stop_typing(self, chat_id):
+        url = f'{self.__api_url}/api/stopTyping'
+        headers = {
+            'Content-Type': 'application/json',
+        }
+        payload = {
+            'session': 'default',
+            'chatId': chat_id,
+        }
+        requests.post(
+            url=url,
+            json=payload,
+            headers=headers,
+        )
